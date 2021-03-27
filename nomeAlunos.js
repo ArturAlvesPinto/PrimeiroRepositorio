@@ -1,49 +1,56 @@
-//declara variaveis
-var nota, nome, quantidadeAlunos, cont, media, push, total, lista, numeroProvas;
+//CÓDIGO DE APRENDIZADO
 
 
-quantidadeAlunos = parseInt(prompt("Escreva o numero de alunos:"))
-numeroProvas = parseInt(prompt("Informe o número de provas:"))
+var numeroProvas, cont, media, push, total, nota, varlor, error;
 
-if (quantidadeAlunos == 0 || quantidadeAlunos =="") {
-    alert("Atenção!!! Informe um numero de alunos!!!")
+
+function Diario() {
+
+   const nome = document.getElementById('NomeAluno').value;
+   const numeroProvas = parseInt(document.getElementById('NumProvas').value);
+
+    console.log(nome);
+    console.log(numeroProvas);
+
+    if (!nome) {
+        alert("Informe o nome do Aluno !!!")
     }
+    else{
 
-else if (quantidadeAlunos == 0 || quantidadeAlunos ==""){
-    alert("Número de provas em branco !!!")
-    }
-
-else {
     cont = 0
-    nome = ["zero"]
-    nota = [0]
-    total = [0]
-    media = ["zero"]
+    total = 0
+    nota = []
+   
     
-    while (cont < quantidadeAlunos) {
-        cont = cont + 1;
-        //nome = ;
-        nome.push(prompt("Escreva o nome do aluno"+cont+":"))
+    while (cont < numeroProvas ) {
 
-        //nota = ;
-        nota.push(parseInt(prompt("Escreva a nota do aluno"+cont+":")))
+        valor = ((prompt("Escreva a nota(%) do aluno para a prova "+(cont+1)+":")));
+        if( isNaN(valor) == true ){
+            alert("ERROR:\nEste campo aceita apenas números.\nTente Novamente!");
+            error = 1;
+        }
+        else{
+        nota.push(parseInt(valor));
+        console.log(parseInt(valor));
+        total = total + nota[cont];
+        cont ++;
+        }
 
-        total += nota[cont]
+    }
 
-        if (nota[cont] >= 60) {
-            media.push("Aprovado!")
-        } else {
-            media.push("Reprovado!")
-        }}
+    media = total/numeroProvas
 
-    lista = [[nome],[nota],[media]]
-
-    x = total/cont;
-
-    document.getElementById("Paragrafo").innerText = console.table(lista)
-    document.getElementById("Paragrafo1").innerText = "A media da turma foi:" + x
-
+    if (media >= 60) {
+        aprovacao = "Aprovado!"
+    } else {
+        aprovacao = "Reprovado!"
+    }
+    
+    document.getElementById('nomes').innerHTML = nome;
+    document.getElementById('medias').innerHTML = media;
+    document.getElementById('notas').innerHTML = nota;
+    document.getElementById('aprovacao').innerHTML = aprovacao;
+    }
 }
-
 
 

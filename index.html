@@ -1,11 +1,57 @@
+<!-- CÓDIGO DE APRENDIZADO: -->
+
 <!DOCTYPE html>
-<html>
+<html lang = "pt-br">
     <head>
+        <meta charset="utf-8">
         <title>--DIARIO ESCOLAR PROVAS--</title>    
+        <script src="nomeAlunos.js"></script>
     </head>
     <body>
-        <p id ="Paragrafo"> </p>
-        <p id ="Paragrafo1"> </p>
+        
+        <center><h1>Olá! Apresente as informações para gerar o diário.</h1></center>
+        <br/><br/>
+
+        <table>
+            <tr>
+                <td align="right"><b>&emsp;&emsp;&emsp;&emsp;&emsp;Nome do Aluno:</b></td>
+                <td><input id = "NomeAluno" type="text" size="50" maxlength="60" text-align :center align="center"></input></h2></td>
+            </tr>
+            <tr>
+                <td><b>&emsp;&emsp;&emsp;&emsp;&emsp;Número de provas aplicadas:</b></td>
+                <td><select id ="NumProvas">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select></td>
+            </tr>
+        </table>
+        <br/><br/>
+
+        <h2>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="submit" onclick="Diario()" value = 'Confirmar'></input></h2>
+
+        
+
+        <table>
+            <tr>
+                <td align="center" style="width:600px"><b>Nome do Aluno</b></td>
+                <td align="center" style="width:200px"><b>Média nas provas (%)</b></td>
+                <td align="center" style="width:500px"><b>Notas das Provas</b></td>
+                <td align="center" style="width:200px"><b>Aprovação</b></td>
+
+            </tr><tr></tr>
+            <tr>
+                <td align="center" style="width:600px"><span id = "nomes"></span></td>
+                <td align="center" style="width:200px"><span id = "medias"></span>%</td>
+                <td align="center" style="width:500px"><span id = "notas"></span></td>
+                <td align="center" style="width:500px"><span id = "aprovacao"></span></td>                
+            </tr>
+            
+        </table>
+        
+        
     </body>
-    <script src="nomeAlunos.js"></script>
+    
 </html>
